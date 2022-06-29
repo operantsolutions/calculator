@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div id="calcBody">
+        <div id="screen">
+            <p id="screenPreview"></p>
+            <p id="screenContent"></p>
+        </div>
+        <div id="keys">
+            <div id="row1" class="row">
+                <button id="delete" class="fatTop fatLeft singleBtn">del</button>
+                <button id="divide" class="fatTop singleBtn">/</button>
+                <button id="multiply" class="fatTop singleBtn">*</button>
+                <button id="subtract" class="fatRight fatTop singleBtn">-</button>
+            </div>
+            <div id="row2" class="row">
+                <div id="column1" class="column">
+                    <div id="topRow" class="row">
+                        <button id="7" class="fatLeft singleBtn">7</button>
+                        <button id="8" class="singleBtn">8</button>
+                        <button id="9" class="singleBtn">9</button>
+                    </div>
+                    <div id="bottomRow" class="row">
+                        <button id="4" class="fatLeft singleBtn">4</button>
+                        <button id="5" class="singleBtn">5</button>
+                        <button id="6" class="singleBtn">6</button>
+                    </div>
+                </div>
+                <div id="column2" class="column">
+                    <button id="add" class="fatRight doubleVBtn">+</button>
+                </div>
+            </div>
+            <div id="row3" class="row">
+                <div id="column1" class="column">
+                    <div id="topRow" class="row">
+                        <button id="1" class="fatLeft singleBtn">1</button>
+                        <button id="2" class="singleBtn">2</button>
+                        <button id="3" class="singleBtn">3</button>
+                    </div>
+                    <div id="bottomRow" class="row">
+                        <button id="zero" class="fatLeft fatBottom singleBtn">0</button>
+                        <button id="decimal" class="fatBottom singleBtn">.</button>
+                        <button id="clear" class="fatBottom singleBtn">clear</button>
+                    </div>
+                </div>
+                <div id="column2" class="column">
+                    <button id="enter" class="fatBottom fatRight doubleVBtn">enter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

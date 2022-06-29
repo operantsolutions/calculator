@@ -1,0 +1,127 @@
+body {
+    font-family: Roboto, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 36px;
+    background-color: #222222;
+}
+
+.row {
+    display: flex;
+}
+
+.singleBtn {
+    flex: 1 0 50px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+
+.row #column1 {
+    flex: 3 0 150px;
+}
+
+.row #column2 {
+    flex: 1 0 50px;
+}
+
+.doubleHBtn {
+    flex: 2 0 100px;
+}
+
+.doubleVBtn {
+    flex: 1 0 auto;
+}
+
+#calcBody {
+    background-color: black;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 550px;
+    border-radius: 10px;
+}
+
+#screen {
+    background-color: black;
+    flex: 1 0 auto;
+    height: 15%;
+    display: flex;
+    border: 4px white solid;
+    border-bottom: 0px white solid;
+}
+
+#screenPreview {
+    margin: 8px;
+    color: white;
+    font-size: 18px;
+    justify-self: start;
+    align-self: start;
+}
+
+#screenContent {
+    margin: 8px;
+    color: white;
+    font-size: 36px;
+    align-self: end;
+    margin-left: auto;
+}
+
+#keys {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex: 5 0 auto;
+}
+
+#row1 {
+    flex: 1 0 auto;
+}
+
+#row2, #row3 {
+    flex: 2 0 auto;
+}
+
+#topRow, #bottomRow {
+    flex: 1 0 auto;
+}
+
+button {
+    background-color: #222222;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    border: 2px white solid;
+}
+
+button:hover {
+    background-color: #111111;
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 0px 1px black;
+}
+
+.fatLeft {
+    border-left: 4px white solid;
+}
+
+.fatRight {
+    border-right: 4px white solid;
+}
+
+.fatTop {
+    border-top: 4px white solid;
+}
+
+.fatBottom {
+    border-bottom: 4px white solid;
+}
