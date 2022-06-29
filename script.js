@@ -78,6 +78,11 @@ function updateCalc(e){
             break;
         case "+":
             if (calc.op){
+                operate(calc.a, calc.b, calc.op);
+                calc.op = add;
+                calc.acceptA = false;
+                calc.acceptB = true;
+                addToScreen(input);
             }
             else {
                 calc.op = add;
@@ -88,6 +93,11 @@ function updateCalc(e){
             break;
         case "-":
             if (calc.op){
+                operate(calc.a, calc.b, calc.op);
+                calc.op = subtract;
+                calc.acceptA = false;
+                calc.acceptB = true;
+                addToScreen(input);
             }
             else {
                 calc.op = subtract;
@@ -98,6 +108,11 @@ function updateCalc(e){
             break;
         case "/":
             if (calc.op){
+                operate(calc.a, calc.b, calc.op);
+                calc.op = divide;
+                calc.acceptA = false;
+                calc.acceptB = true;
+                addToScreen(input);
             }
             else {
                 calc.op = divide;
@@ -108,7 +123,11 @@ function updateCalc(e){
             break;
         case "*":
             if (calc.op){
-
+                operate(calc.a, calc.b, calc.op);
+                calc.op = multiply;
+                calc.acceptA = false;
+                calc.acceptB = true;
+                addToScreen(input);
             }
             else {
                 calc.op = multiply;
@@ -176,10 +195,15 @@ function divide (a,b){
 }
 
 function operate (a, b, op){
-    const result = op(a, b);
-    screenContent.textContent = result.toString();
-    clearCalc();
-    calc.a = result;
+    if (b === ""){
+        printError();
+    }
+    else {
+        const result = op(a, b);
+        screenContent.textContent = result.toString().slice(0, 10);
+        clearCalc();
+        calc.a = result;
+    }
 }
 
 function addToScreen(char){
