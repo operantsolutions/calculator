@@ -138,7 +138,12 @@ function updateCalc(e){
             break;
         case "del":
             if (calc.acceptA){
-                calc.a = parseFloat(calc.a.toString().slice(0, calc.a.toString().length-1));
+                calc.a = calc.a.toString().slice(0, calc.a.toString().length-1);
+                if (calc.a[calc.a.length-1] == "."){
+                }
+                else {
+                    calc.a = parseFloat(calc.a)
+                }
                 screenContent.textContent = screenContent.textContent.slice(0, screenContent.textContent.length-1);
             }
             else if (calc.acceptB && calc.b === ""){
@@ -146,7 +151,12 @@ function updateCalc(e){
                 screenContent.textContent = screenContent.textContent.slice(0, screenContent.textContent.length-3);
             }
             else {
-                calc.b = parseFloat(calc.b.toString().slice(0, calc.b.toString().length-1));
+                calc.b = calc.b.toString().slice(0, calc.b.toString().length-1);
+                if (calc.b[calc.b.length-1] == "."){
+                }
+                else {
+                    calc.b = parseFloat(calc.b)
+                }
                 screenContent.textContent = screenContent.textContent.slice(0, screenContent.textContent.length-1);
             }
         default:
@@ -176,6 +186,10 @@ function clear(){
 function printError(){
     clear();
     screenContent.textContent = "ERROR";
+    setTimeout( () => {
+        screenContent.textContent = "";
+        screenPreview.textContent = "";
+    }, 500)
 }
 
 function add (a, b){
@@ -195,7 +209,15 @@ function divide (a,b){
 }
 
 function operate (a, b, op){
-    if (b === ""){
+    if (a.toString().includes(".")){
+        a = parseFloat(a)
+    }
+    if (b.toString().includes(".")){
+        b = parseFloat(b)
+    }
+    if (b === "" && op === undefined){
+    }
+    else if (b === ""){
         printError();
     }
     else {
