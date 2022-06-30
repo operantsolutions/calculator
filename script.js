@@ -138,25 +138,36 @@ function updateCalc(e){
             break;
         case "del":
             if (calc.acceptA){
-                calc.a = calc.a.toString().slice(0, calc.a.toString().length-1);
-                if (calc.a[calc.a.length-1] == "."){
+                if (calc.a.toString().length === 1){
+                    calc.a = ""
                 }
                 else {
-                    calc.a = parseFloat(calc.a)
+                    calc.a = calc.a.toString().slice(0, calc.a.toString().length-1);
+                    if (calc.a[calc.a.length-1] == "."){
+                    }
+                    else {
+                        calc.a = parseFloat(calc.a)
+                    }
                 }
                 screenContent.textContent = screenContent.textContent.slice(0, screenContent.textContent.length-1);
             }
             else if (calc.acceptB && calc.b === ""){
                 calc.op = undefined;
+                calc.acceptB = false;
+                calc.acceptA = true;
                 screenContent.textContent = screenContent.textContent.slice(0, screenContent.textContent.length-3);
             }
             else {
-                calc.b = calc.b.toString().slice(0, calc.b.toString().length-1);
-                if (calc.b[calc.b.length-1] == "."){
+                if (calc.b.toString().length === 1){
+                    calc.b = ""
                 }
-                else {
-                    calc.b = parseFloat(calc.b)
-                }
+                else {calc.b = calc.b.toString().slice(0, calc.b.toString().length-1);
+                    if (calc.b[calc.b.length-1] == "."){
+                    }
+                    else {
+                        calc.b = parseFloat(calc.b)
+                    }
+                }   
                 screenContent.textContent = screenContent.textContent.slice(0, screenContent.textContent.length-1);
             }
         default:
